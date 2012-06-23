@@ -43,12 +43,12 @@ class Powerex {
         //method return value
         //{= count($arr) }
         //or {= $num1 + num2}
-        '~\{=\s*(.+)\s*\}~'
+        '~\{=\s*([^\}]+)\s*\}~'
             => '<?php echo $1 ?>',
         
         //method doesn't return value
         //{: echo "hello" }
-        '~\{:\s*(.+)\s*\}~'
+        '~\{:\s*([^\}]+)\s*\}~'
             => '<?php $1 ?>',
         
         //<p:set var="$i" value="123" />
